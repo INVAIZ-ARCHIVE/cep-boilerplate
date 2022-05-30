@@ -1,5 +1,5 @@
-test = {
-  run: function () {
-    alert("hello22");
-  },
-};
+function log(msg) {
+  $.writeln(msg);
+}
+
+log("hello");
