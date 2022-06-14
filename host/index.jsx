@@ -31,3 +31,6 @@ function test() {
 function log(msg) {
   $.writeln(msg);
 }
+
+$.bp();
+alert("hello");
