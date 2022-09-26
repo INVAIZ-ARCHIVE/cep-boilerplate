@@ -7,8 +7,12 @@
   </ExtensionList>
   <ExecutionEnvironment>
     <HostList>
-      <!-- 3) -->
-     <Host Name="PPRO" Version="11.0"/>
+      <Host Name="PHSP" Version="19.0" />
+      <Host Name="PHXS" Version="19.0" />
+     	<Host Name="ILST" Version="19.0"/>
+      <Host Name="AEFT" Version="15.0"/>
+      <Host Name="IDSN" Version="16.0"/>
+      <Host Name="PPRO" Version="11.0"/>
     </HostList>
     <LocaleList>
       <Locale Code="All" />
