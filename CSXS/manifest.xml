@@ -22,26 +22,24 @@
     </RequiredRuntimeList>
   </ExecutionEnvironment>
   <DispatchInfoList>
-    <!-- 2) -->
     <Extension Id="com.my.test.panel">
       <DispatchInfo>
         <Resources>
-          <!-- 4) -->
           <MainPath>./client/index.html</MainPath>
-          <!-- 5) -->
           <ScriptPath>./host/index.jsx</ScriptPath>
-          <CEFCommandLine />
+            <CEFCommandLine>
+          <Parameter>--enable-nodejs</Parameter>
+          <Parameter>--mixed-context</Parameter>
+        </CEFCommandLine>
         </Resources>
         <Lifecycle>
           <AutoVisible>true</AutoVisible>
         </Lifecycle>
         <UI>
           <Type>Panel</Type>
-          <!-- 6) -->
-          <Menu>debug test</Menu>
+          <Menu>boiler plate</Menu>
           <Geometry>
             <Size>
-              <!-- 7) -->
               <Height>500</Height>
               <Width>350</Width>
             </Size>
