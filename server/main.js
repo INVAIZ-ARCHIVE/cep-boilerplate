@@ -37,30 +37,34 @@
     var userdata = null;
     request.setEncoding("utf-8");
 
+    //요청에 에러가 있을 시.
     request.on("error", (err) => {
-      //요청에 에러가 있을 시.
       response.write(err);
       response.end();
-    }),
-      request.on("data", (data) => {
-        //요청에 데이터가 있을 시.
-        userdata = JSON.parse(data);
-      }),
-      request.on("end", () => {
-        //요청에 데이터를 모두 받았을 시.
-        response.on("error", (err) => {
-          // 응답에 에러가 있으면
-          console.error(err);
-        });
-        switch (userdata.messageType) {
-        }
-        csInterface.evalScript(functionName, (status) => {
-          // 에러 처리가 완료된 프로그램에 대한 처리
-          response.setHeader("Content-Type", "text/plain");
-          response.write(status);
-          response.end();
-        });
+    });
+
+    //요청에 데이터가 있을 시.
+    request.on("data", (data) => {
+      userdata = JSON.parse(data);
+    });
+
+    //요청에 데이터를 모두 받았을 시.
+
+    request.on("end", () => {
+      // 응답에 에러가 있을 시
+      response.on("error", (err) => {
+        console.error(err);
       });
+
+      switch (userdata.messageType) {
+      }
+      csInterface.evalScript(functionName, (status) => {
+        // 에러 처리가 완료된 프로그램에 대한 처리
+        response.setHeader("Content-Type", "text/plain");
+        response.write(status);
+        response.end();
+      });
+    });
   }
 
   function getPortName() {
