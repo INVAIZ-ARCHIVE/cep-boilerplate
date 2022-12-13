@@ -15,7 +15,7 @@
       <Host Name="PPRO" Version="11.0"/>
     </HostList>
     <LocaleList>
-      <Locale Code="All" />
+      <Locale Code="All"/>
     </LocaleList>
     <RequiredRuntimeList>
       <RequiredRuntime Name="CSXS" Version="7.0" />
@@ -37,7 +37,7 @@
         </Lifecycle>
         <UI>
           <Type>Panel</Type>
-          <Menu>boiler plate</Menu>
+          <Menu>boilerplate</Menu>
           <Geometry>
             <Size>
               <Height>500</Height>
