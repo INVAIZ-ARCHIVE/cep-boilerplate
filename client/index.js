@@ -10,6 +10,9 @@
   });
 
   function Request(request, response) {
+    response.writeHead(200, { "content-Type": "text/html" });
+    response.end("<h1>Hello World!</h1>");
+
     var userdata = null;
     request.setEncoding("utf-8");
 
