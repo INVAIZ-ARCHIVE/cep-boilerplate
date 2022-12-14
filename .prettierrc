@@ -1,7 +1,9 @@
 {
-   "printWidth": 100,
-   "tabWidth": 2,
-   "endOfLine": "auto",
-   "singleQuote": false,
-   "jsxSingleQuote": true
+  "printWidth": 150,
+  "tabWidth": 2,
+  "endOfLine": "auto",
+  "singleQuote": false,
+  "jsxSingleQuote": true,
+  "xmlSelfClosingSpace": true,
+  "xmlWhitespaceSensitivity": "ignore"
 }
