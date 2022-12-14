@@ -1,0 +1,25 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true,
+    "extendscript/base": true, // Basic suite available in all ExtenScript environments
+    "extendscript/scriptui": true, // ScriptUI globals
+    "extendscript/indesign": true, // InDesign globals
+    "extendscript/photoshop": true, // Photoshop globals
+    "extendscript/illustrator": true // Illustrator globals
+  },
+  "plugins": ["jsdoc", "extendscript"],
+  "extends": ["eslint:recommended"],
+  "overrides": [],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "rules": {
+    "no-undef": "warn"
+  },
+  "globals": {
+    "$": true
+  }
+}

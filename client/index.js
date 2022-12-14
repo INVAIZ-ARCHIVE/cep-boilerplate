@@ -13,7 +13,6 @@
     response.writeHead(200, { "content-Type": "text/html" });
     response.end("<h1>Hello World!</h1>");
 
-    var userdata = null;
     request.setEncoding("utf-8");
 
     // 요청에 에러가 있을 시.
@@ -25,6 +24,7 @@
     // 요청에 데이터가 있을 시.
     request.on("data", (data) => {
       // 로직 작성
+      console.log(data);
     });
 
     // 요청에 데이터를 모두 받았을 시.
@@ -69,22 +69,19 @@
     }
     return num;
   }
-
   window.onload = function () {
-    let extensionRoot =
-      csInterface.getSystemPath(SystemPath.EXTENSION) + `/jsxbin/`;
-
+    let extensionRoot = csInterface.getSystemPath(SystemPath.EXTENSION) + `/jsxbin/`;
     // csInterface.evalScript(`evalFiles("${extensionRoot}")`);
 
     portNumber = getPortNumber();
 
     server.on("request", Request);
 
-    server.on("connection", function (code) {
+    server.on("connection", function () {
       console.log("클라이언트가 접속하였습니다...");
     });
 
-    server.on("close", function (code) {
+    server.on("close", function () {
       console.log("서버가 종료되었습니다...");
     });
 

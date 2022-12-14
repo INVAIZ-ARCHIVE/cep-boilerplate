@@ -2,4 +2,4 @@ function log(msg) {
   $.writeln(msg);
 }
 
-log("hello");
+log("hello world!");

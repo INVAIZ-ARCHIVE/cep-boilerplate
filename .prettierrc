@@ -1,15 +1,7 @@
 {
-  "terminal.integrated.defaultProfile.windows": "Git Bash",
-  "git.autofetch": true,
-  "javascript.format.enable": false,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.formatOnSave": true,
-  "prettier.arrowParens": "avoid",
-  "prettier.tabWidth": 4,
-  "prettier.semi": true,
-  "prettier.singleQuote": true,
-  "prettier.printWidth": 150,
-  "prettier.trailingComma": "es5",
-  "typescript.updateImportsOnFileMove.enabled": "always",
-  "workbench.iconTheme": "material-icon-theme"
+   "printWidth": 100,
+   "tabWidth": 2,
+   "endOfLine": "auto",
+   "singleQuote": false,
+   "jsxSingleQuote": true
 }
