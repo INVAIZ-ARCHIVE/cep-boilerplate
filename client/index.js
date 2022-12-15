@@ -70,7 +70,7 @@
     return num;
   }
   window.onload = function () {
-    let extensionRoot = csInterface.getSystemPath(SystemPath.EXTENSION) + `/jsxbin/`;
+    // let extensionRoot = csInterface.getSystemPath(SystemPath.EXTENSION) + `/jsxbin/`;
     // csInterface.evalScript(`evalFiles("${extensionRoot}")`);
 
     portNumber = getPortNumber();
