@@ -1,11 +1,11 @@
 !(function () {
-  var http = require("http");
-  var portNumber = 0;
-  var localHost = "127.0.0.1";
-  var functionName = "";
-  var csInterface = new CSInterface();
+  const http = require("http");
+  let portNumber = 0;
+  const localHost = "127.0.0.1";
+  let functionName = "";
+  const csInterface = new CSInterface();
 
-  var server = http.createServer().on("listening", () => {
+  const server = http.createServer().on("listening", () => {
     alert("port number =" + portNumber.toString());
   });
 

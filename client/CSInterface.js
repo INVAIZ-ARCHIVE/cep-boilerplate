@@ -358,15 +358,7 @@ function AppSkinInfo(
  *
  * @return A new \c HostEnvironment object.
  */
-function HostEnvironment(
-  appName,
-  appVersion,
-  appLocale,
-  appUILocale,
-  appId,
-  isAppOnline,
-  appSkinInfo
-) {
+function HostEnvironment(appName, appVersion, appLocale, appUILocale, appId, isAppOnline, appSkinInfo) {
   this.appName = appName;
   this.appVersion = appVersion;
   this.appLocale = appLocale;
@@ -388,13 +380,7 @@ function HostEnvironment(
  *
  * @return A new \c HostCapabilities object.
  */
-function HostCapabilities(
-  EXTENDED_PANEL_MENU,
-  EXTENDED_PANEL_ICONS,
-  DELEGATE_APE_ENGINE,
-  SUPPORT_HTML_EXTENSIONS,
-  DISABLE_FLASH_EXTENSIONS
-) {
+function HostCapabilities(EXTENDED_PANEL_MENU, EXTENDED_PANEL_ICONS, DELEGATE_APE_ENGINE, SUPPORT_HTML_EXTENSIONS, DISABLE_FLASH_EXTENSIONS) {
   this.EXTENDED_PANEL_MENU = EXTENDED_PANEL_MENU;
   this.EXTENDED_PANEL_ICONS = EXTENDED_PANEL_ICONS;
   this.DELEGATE_APE_ENGINE = DELEGATE_APE_ENGINE;
@@ -490,9 +476,7 @@ function CSInterface() {}
 CSInterface.THEME_COLOR_CHANGED_EVENT = "com.adobe.csxs.events.ThemeColorChanged";
 
 /** The host environment data object. */
-CSInterface.prototype.hostEnvironment = window.__adobe_cep__
-  ? JSON.parse(window.__adobe_cep__.getHostEnvironment())
-  : null;
+CSInterface.prototype.hostEnvironment = window.__adobe_cep__ ? JSON.parse(window.__adobe_cep__.getHostEnvironment()) : null;
 
 /** Retrieves information about the host environment in which the
  *  extension is currently running.

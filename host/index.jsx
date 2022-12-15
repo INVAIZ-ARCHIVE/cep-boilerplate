@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 function evalFiles(jsxFolderPath) {
   var folder = new Folder(jsxFolderPath);
   if (folder.exists) {

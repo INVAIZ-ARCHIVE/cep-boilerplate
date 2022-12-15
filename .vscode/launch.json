@@ -3,8 +3,16 @@
   "configurations": [
     {
       "type": "extendscript-debug",
-      "request": "attach",
-      "name": "Attach to ExtendScript Engine"
+      "request": "launch",
+      "name": "Run Current Script",
+      "program": "${file}",
+      "stopOnEntry": false,
+      "excludes": [
+        "undefined",
+        "builtin",
+        // "Function",
+        "prototype"
+      ]
     }
   ]
 }
