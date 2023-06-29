@@ -2,8 +2,8 @@
   "compilerOptions": {
     "module": "none",
     "noLib": true,
-    "outDir": "jsxbin",
-    "target": "es6",
+    "outDir": "./jsxbin/",
+    "target": "es5",
     "sourceMap": false
   },
 

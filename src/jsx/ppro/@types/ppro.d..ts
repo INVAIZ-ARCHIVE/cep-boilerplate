@@ -9,10 +9,6 @@ declare interface LumetriProps {
   property: string;
 }
 
-declare interface PPRO_LumetriColor {
-  modifyColor(props: LumetriProps, diff: number): void;
-}
-
 declare interface PPRO_Utils {
   getProjectFrame(): number;
   getSequenceFrame(): FrameObject;

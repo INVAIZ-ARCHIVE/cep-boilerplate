@@ -3,6 +3,6 @@
     "target": "es3",
     "module": "none",
     "noLib": true,
-    "types": ["./global", "../../node_modules/types-for-adobe/Illustrator/2022"]
+    "types": ["../../../node_modules/types-for-adobe/Illustrator/2022"]
   }
 }
