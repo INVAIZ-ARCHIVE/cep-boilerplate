@@ -1,12 +1,28 @@
 !(function () {
   const http = require("http");
-  let portNumber = 0;
+  let hostApp = [];
   const localHost = "127.0.0.1";
   let functionName = "";
   const csInterface = new CSInterface();
 
+  /* 2) Make a reference to your HTML button and add a click handler. */
+  var openButton = document.querySelector("#open-button");
+  openButton.addEventListener("click", openDoc);
+
+  var openDebugButton = document.querySelector("#open-debug");
+  openDebugButton.addEventListener("click", openDebub);
+
+  /* 3) Write a helper function to pass instructions to the ExtendScript side. */
+  function openDoc() {
+    csInterface.evalScript("openDocument()");
+  }
+  function openDebub() {
+    csInterface.openURLInDefaultBrowser("http://localhost:8089");
+  }
+
   const server = http.createServer().on("listening", () => {
-    alert("port number =" + portNumber.toString());
+    console.log(hostApp);
+    alert("port number =" + hostApp[0].toString());
   });
 
   function Request(request, response) {
@@ -45,35 +61,44 @@
 
   // getHostEnvironment 함수를 이용해 현재 HostApp을 판별하고 해당 Port를 return합니다.
   function getPortNumber() {
-    var num;
+    var portNumber;
+    var folder;
     var e = csInterface.getHostEnvironment();
     switch (e.appId) {
       case "PHXS":
-        num = 50001;
+        portNumber = 50001;
+        folder = "phxs";
         break;
       case "PHSP":
-        num = 50001;
+        portNumber = 50001;
+        folder = "phxs";
         break;
       case "ILST":
-        num = 50002;
+        portNumber = 50002;
+        folder = "ilst";
         break;
       case "AEFT":
-        num = 50003;
+        portNumber = 50003;
+        folder = "aeft";
         break;
       case "PPRO":
-        num = 50004;
+        portNumber = 50004;
+        folder = "ppro";
         break;
       case "IDSN":
-        num = 50005;
+        portNumber = 50005;
+        folder = "idsn";
         break;
     }
-    return num;
+    return [portNumber, folder];
   }
   window.onload = function () {
-    // let extensionRoot = csInterface.getSystemPath(SystemPath.EXTENSION) + `/jsxbin/`;
-    // csInterface.evalScript(`evalFiles("${extensionRoot}")`);
+    hostApp = getPortNumber();
 
-    portNumber = getPortNumber();
+    let extensionRoot = csInterface.getSystemPath(SystemPath.EXTENSION) + `/jsxbin/`;
+
+    extensionRoot += hostApp[1];
+    csInterface.evalScript(`evalFiles("${extensionRoot}")`);
 
     server.on("request", Request);
 
@@ -85,6 +110,6 @@
       console.log("서버가 종료되었습니다...");
     });
 
-    server.listen(portNumber, localHost);
+    server.listen(hostApp[0], localHost);
   };
 })();

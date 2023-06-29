@@ -1,1 +1,12 @@
-{"compilerOptions":{"module":"none","noLib":true}}
+{
+  "compilerOptions": {
+    "module": "none",
+    "noLib": true,
+    "outDir": "jsxbin",
+    "target": "es3",
+    "sourceMap": false
+  },
+
+  "include": ["src/**/*", "jsxbin/lib"],
+  "exclude": ["node_modules"]
+}

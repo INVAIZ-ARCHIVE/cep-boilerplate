@@ -38,7 +38,7 @@
         </Lifecycle>
         <UI>
           <Type>Panel</Type>
-          <Menu>boilerplate</Menu>
+          <Menu>INVAIZ Test Panel</Menu>
           <Geometry>
             <Size>
               <Height>500</Height>
