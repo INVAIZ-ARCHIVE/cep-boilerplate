@@ -1,11 +1,8 @@
-const { createKey, verifyKey, generateKeyPair } = require("license-keys");
+const macaddress = require("macaddress");
 
-// Generate a PGP key pair
-(async () => {
-  const keyPair = await generateKeyPair("John Doe", "john.doe@example.com", "secure-passphrase");
-  console.log(keyPair);
-})();
-
+macaddress.one((err, mac) => {
+  alert(mac);
+});
 // !(function () {
 //   const http = require("http");
 //   let hostApp = [];
